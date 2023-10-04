@@ -16,40 +16,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (from === to) {
-      result.textContent = "Result: " + inputTemperature + " " + from;
+      result.textContent = `Result: ${inputTemperature} ${from}`;
       return;
     }
 
+    const convertedTemperature = convertTemperature(inputTemperature, from, to);
+    result.textContent = `Result: ${convertedTemperature.toFixed(2)} ${to}`;
+  });
+
+  function convertTemperature(value, from, to) {
     if (from === "celsius") {
       if (to === "fahrenheit") {
-        const convertedTemperature = (inputTemperature * 9) / 5 + 32;
-        result.textContent =
-          "Result: " + convertedTemperature.toFixed(2) + " " + to;
+        return (value * 9) / 5 + 32;
       } else if (to === "kelvin") {
-        const convertedTemperature = inputTemperature + 273.15;
-        result.textContent =
-          "Result: " + convertedTemperature.toFixed(2) + " " + to;
+        return value + 273.15;
       }
     } else if (from === "fahrenheit") {
       if (to === "celsius") {
-        const convertedTemperature = ((inputTemperature - 32) * 5) / 9;
-        result.textContent =
-          "Result: " + convertedTemperature.toFixed(2) + " " + to;
+        return ((value - 32) * 5) / 9;
       } else if (to === "kelvin") {
-        const convertedTemperature = ((inputTemperature - 32) * 5) / 9 + 273.15;
-        result.textContent =
-          "Result: " + convertedTemperature.toFixed(2) + " " + to;
+        return ((value - 32) * 5) / 9 + 273.15;
       }
     } else if (from === "kelvin") {
       if (to === "celsius") {
-        const convertedTemperature = inputTemperature - 273.15;
-        result.textContent =
-          "Result: " + convertedTemperature.toFixed(2) + " " + to;
+        return value - 273.15;
       } else if (to === "fahrenheit") {
-        const convertedTemperature = ((inputTemperature - 273.15) * 9) / 5 + 32;
-        result.textContent =
-          "Result: " + convertedTemperature.toFixed(2) + " " + to;
+        return ((value - 273.15) * 9) / 5 + 32;
       }
     }
-  });
+    return value; // Default: no conversion
+  }
 });
