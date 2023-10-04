@@ -104,58 +104,60 @@ button {
 /* Dark Theme Styles */
 /* Dark Theme Styles */
 body.dark-theme {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .theme-toggle {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .theme-toggle .switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 24px;
-    background-color: #ccc; /* Default background color for the switch */
-    border-radius: 12px;
-    overflow: hidden; /* Hide the overflow to create a circular shape */
-  }
-  
-  /* Hide the checkbox visually but keep it functional */
-  .theme-toggle .switch input[type="checkbox"] {
-    position: absolute;
-    top: -9999px;
-  }
-  
-  .theme-toggle .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background-color: #3498db; /* Blue color for the slider in dark mode */
-    border-radius: 50%;
-    transition: 0.4s; /* Add a smooth transition effect */
-    transform: translateX(0%); /* Initially positioned to the left */
-  }
-  
-  .theme-toggle .slider.round {
-    border-radius: 50%; /* Make the slider round */
-  }
-  
-  .theme-label {
-    margin-left: 10px;
-    font-weight: bold;
-    font-size: 16px;
-  }
-  
-  /* Styling for the checked (dark mode) state */
-  .theme-toggle input:checked + .slider {
-    transform: translateX(100%); /* Move to the right when checked */
-    background-color: #f39c12; /* Orange color for the slider in light mode */
-  }
-  
+  background-color: #333;
+  color: #fff;
+}
+body.dark-theme h1,
+body.dark-theme #result {
+  color: #fff;
+}
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.theme-toggle .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  background-color: #ccc; /* Default background color for the switch */
+  border-radius: 12px;
+  overflow: hidden; /* Hide the overflow to create a circular shape */
+}
+
+/* Hide the checkbox visually but keep it functional */
+.theme-toggle .switch input[type="checkbox"] {
+  position: absolute;
+  top: -9999px;
+}
+
+.theme-toggle .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #3498db; /* Blue color for the slider in dark mode */
+  border-radius: 50%;
+  transition: 0.4s; /* Add a smooth transition effect */
+  transform: translateX(0%); /* Initially positioned to the left */
+}
+
+.theme-toggle .slider.round {
+  border-radius: 50%; /* Make the slider round */
+}
+
+.theme-label {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Styling for the checked (dark mode) state */
+.theme-toggle input:checked + .slider {
+  transform: translateX(100%); /* Move to the right when checked */
+  background-color: #f39c12; /* Orange color for the slider in light mode */
+}
